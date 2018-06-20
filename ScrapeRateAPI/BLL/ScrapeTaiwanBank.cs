@@ -24,6 +24,8 @@ namespace ScrapeRateAPI.BLL
                 HtmlDocument hdc = new HtmlDocument();
                 hdc.LoadHtml(nodes);
 
+                var time = doc.DocumentNode.SelectSingleNode("/html[1]/body[1]/div[1]/main/div[4]/p[2]/span[2]").InnerHtml;
+
                 var list = new Dictionary<string, int[]>();
                 list.Add("美金", new int[] { 1, 3 });
                 list.Add("日幣", new int[] { 8, 3 });
@@ -33,7 +35,7 @@ namespace ScrapeRateAPI.BLL
                 list.Add("紐元", new int[] { 11, 3 });
 
                 sb.AppendLine("");
-                sb.AppendLine($"台灣銀行現金匯率：{DateTime.Now.ToString("yyyy-MM-dd HH:mm")}");
+                sb.AppendLine($"最新掛牌時間：{time}");
                 foreach (var key in list)
                 {
                     var cashSalePrice = hdc.DocumentNode.SelectSingleNode($"/tbody/tr[{key.Value[0]}]/td[{key.Value[1]}]").InnerText;
