@@ -11,7 +11,7 @@ namespace ScrapeRateAPI.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
-
+            ViewBag.Now = System.DateTime.Now;
             return View();
         }
     }

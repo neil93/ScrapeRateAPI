@@ -15,7 +15,7 @@
         <job-name>ScrapeTaiwanBankRateJob</job-name>
         <job-group>scrapeGroup</job-group>
         <!--星期一到五，早上九點到下午七點每小時執行一次-->
-        <cron-expression>0 0 9-19 ? * MON-FRI</cron-expression>
+        <cron-expression>0 0 1-11 ? * MON-FRI</cron-expression>
       </cron>
     </trigger>
   </schedule>
