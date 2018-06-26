@@ -31,7 +31,7 @@ namespace ScrapeRateAPI.BLL
                 {
                     client.Headers.Add("Authorization", $"Bearer {token}");
                     NameValueCollection nc = new NameValueCollection();
-                    nc["message"] = "test" + message;
+                    nc["message"] = message;
 
                     byte[] bResult = client.UploadValues(sendMessageUri, nc);
                     string resultXML = Encoding.UTF8.GetString(bResult);
