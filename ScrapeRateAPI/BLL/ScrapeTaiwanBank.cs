@@ -35,7 +35,7 @@ namespace ScrapeRateAPI.BLL
                 list.Add("紐元", new int[] { 11, 3 });
 
                 sb.AppendLine("");
-                sb.AppendLine($"最新掛牌時間：{time}");
+                sb.AppendLine($"掛牌時間：{time}");
                 foreach (var key in list)
                 {
                     var cashSalePrice = hdc.DocumentNode.SelectSingleNode($"/tbody/tr[{key.Value[0]}]/td[{key.Value[1]}]").InnerText;
